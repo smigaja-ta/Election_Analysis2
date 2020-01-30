@@ -1,6 +1,6 @@
 import csv
 #what we need
-
+fghfghfgfh
 
 #read in CSV
 
@@ -37,8 +37,12 @@ with open("Resources/election_results.csv", "r") as data:
 
 with open("Analysis/election_analysis.txt", "w") as output_file:
 
+    winning_count = 0
+    winning_candidate = ""
     for candidate in candidate_votes:
-        output_file.write(f"Candidate: {candidate}, total votes: {candidate_votes[candidate]['total']}")
+        output_file.write(f"Candidate: {candidate}, "
+                          + f", total votes: {candidate_votes[candidate]['total']:,}"
+                          + f", percent: {candidate_votes[candidate]['total'] / total_votes * 100:.2f}%\n")
 #1.  total num of votes cast
 
 #2.  list of candidates who recieved votes
